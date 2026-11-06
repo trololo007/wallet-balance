@@ -39,6 +39,8 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun WalletScreen() {
+    var balance by remember { mutableIntStateOf(1000) }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -48,14 +50,16 @@ fun WalletScreen() {
     ) {
         Text(
             text = "Мой кошелёк",
-            fontSize = 30.sp
+            fontSize = 20.sp
         )
 
         Text(
-            text = "1000 ₽",
-            fontSize = 45.sp,
+            text = "$balance ₽",
+            fontSize = 36.sp,
             modifier = Modifier.padding(vertical = 16.dp)
         )
     }
 }
+
+
 
